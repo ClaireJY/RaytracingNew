@@ -139,22 +139,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="InOneWeekend\main.cc" />
+    <ClCompile Include="main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common\aabb.h" />
-    <ClInclude Include="common\camera.h" />
-    <ClInclude Include="common\color.h" />
-    <ClInclude Include="common\perlin.h" />
-    <ClInclude Include="common\ray.h" />
-    <ClInclude Include="common\rtweekend.h" />
-    <ClInclude Include="common\rtw_stb_image.h" />
-    <ClInclude Include="common\texture.h" />
-    <ClInclude Include="common\vec3.h" />
-    <ClInclude Include="InOneWeekend\hittable.h" />
-    <ClInclude Include="InOneWeekend\hittable_list.h" />
-    <ClInclude Include="InOneWeekend\material.h" />
-    <ClInclude Include="InOneWeekend\sphere.h" />
+    <ClInclude Include="aabb.h" />
+    <ClInclude Include="aarect.h" />
+    <ClInclude Include="box.h" />
+    <ClInclude Include="bvh_node.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="checker_texture.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="constant_medium.h" />
+    <ClInclude Include="perlin.h" />
+    <ClInclude Include="ray.h" />
+    <ClInclude Include="rtweekend.h" />
+    <ClInclude Include="rtw_stb_image.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="vec3.h" />
+    <ClInclude Include="hittable.h" />
+    <ClInclude Include="hittable_list.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="moving_sphere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

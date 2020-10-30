@@ -11,10 +11,18 @@
 // along with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 //==============================================================================================
 
-#include "../common/rtweekend.h"
+#include "rtweekend.h"
 
 #include "hittable.h"
 
+
+void get_sphere_uv(const vec3& p, double& u, double& v)
+{
+	auto phi = atan2(p.z(), p.x());
+	auto theta = asin(p.y());
+	u = 1 - (phi + pi) / (2 * pi);
+	v = (theta + pi / 2) / pi;
+}
 
 class sphere : public hittable {
     public:
@@ -25,6 +33,7 @@ class sphere : public hittable {
 
         virtual bool hit(
             const ray& r, double tmin, double tmax, hit_record& rec) const override;
+        virtual bool bounding_box(double t0, double t1, aabb& outpub_box) const override;
 
     public:
         point3 center;
@@ -49,6 +58,7 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
+            get_sphere_uv((rec.p - center) / radius, rec.u, rec.v);
             rec.mat_ptr = mat_ptr;
             return true;
         }
@@ -59,12 +69,19 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
+            get_sphere_uv((rec.p - center) / radius, rec.u, rec.v);
             rec.mat_ptr = mat_ptr;
             return true;
         }
     }
 
     return false;
+}
+
+bool sphere::bounding_box(double t0, double t1, aabb& outpub_box)const {
+    outpub_box = aabb(center - vec3(radius, radius, radius),
+        center + vec3(radius, radius, radius));
+    return true;
 }
 
 

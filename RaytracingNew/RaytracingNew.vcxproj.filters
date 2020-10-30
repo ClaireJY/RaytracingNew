@@ -15,49 +15,73 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InOneWeekend\main.cc">
+    <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common\aabb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\color.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\perlin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\ray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\rtw_stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\rtweekend.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common\vec3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InOneWeekend\hittable.h">
+    <ClInclude Include="moving_sphere.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="InOneWeekend\hittable_list.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="aabb.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InOneWeekend\material.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InOneWeekend\sphere.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perlin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtweekend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hittable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hittable_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="checker_texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image_write.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtw_stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aarect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_medium.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
