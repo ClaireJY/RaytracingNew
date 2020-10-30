@@ -1,16 +1,6 @@
-//==============================================================================================
-// Originally written in 2016 by Peter Shirley <ptrshrl@gmail.com>
-//
-// To the extent possible under law, the author(s) have dedicated all copyright and related and
-// neighboring rights to this software to the public domain worldwide. This software is
-// distributed without any warranty.
-//
-// You should have received a copy (see file COPYING.txt) of the CC0 Public Domain Dedication
-// along with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
-//==============================================================================================
 
 #include "rtweekend.h"
-
+#include "bvh_node.h"
 #include "camera.h"
 #include "color.h"
 #include "hittable_list.h"
@@ -235,7 +225,7 @@ hittable_list final_scene() {
 	boundary = make_shared<sphere>(point3(0, 0, 0), 5000, make_shared<dielectric>(1.5));
 	objects.add(make_shared<constant_medium>(boundary, .0001, color(1, 1, 1)));
 
-	auto emat = make_shared<lambertian>(make_shared<image_texture>("earthmap.jpg"));
+	auto emat = make_shared<lambertian>(make_shared<image_texture>("makingstarsw.jpg"));
 	objects.add(make_shared<sphere>(point3(400, 200, 400), 100, emat));
 	auto pertext = make_shared<noise_texture>(0.1);
 	objects.add(make_shared<sphere>(point3(220, 280, 300), 80, make_shared<lambertian>(pertext)));
@@ -346,7 +336,7 @@ int main() {
 		world = final_scene();
 		aspect_ratio = 1.0;
 		image_width = 800;
-		samples_per_pixel = 10000;
+		samples_per_pixel = 200;
 		background = color(0, 0, 0);
 		lookfrom = point3(478, 278, -600);
 		lookat = point3(278, 278, 0);
@@ -361,7 +351,7 @@ int main() {
 	camera cam(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
 
 	// Render
-	ofstream ppmfile("wakawaka.ppm");
+	ofstream ppmfile("finalscene.ppm");
 	ppmfile << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
 	for (int j = image_height - 1; j >= 0; --j) {
